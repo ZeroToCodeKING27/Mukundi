@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kingsley Phalanndwa | Front-End Web Developer</title>
+<meta name="description" content="Front-End Developer with 3+ years of experience building responsive, high-performance websites and React applications. Based in Johannesburg, available across time zones.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0a0b10;--bg2:#10121a;--card:#141723;--line:#23273a;--text:#e9ebf5;--mute:#98a0b8;--a:#7c6cff;--b:#36e2c2;--grad:linear-gradient(120deg,var(--a),var(--b));--r:20px}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{background:var(--bg);color:var(--text);font:400 16px/1.7 Inter,system-ui,sans-serif;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:'Bricolage Grotesque',Inter,sans-serif;line-height:1.1;letter-spacing:-.02em}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1160px;margin:auto;padding:0 24px}
+section{padding:110px 0;position:relative}
+.eyebrow{font:500 13px 'JetBrains Mono',monospace;color:var(--b);letter-spacing:.14em;text-transform:uppercase;margin-bottom:16px;display:flex;align-items:center;gap:10px}
+.eyebrow:before{content:"";width:28px;height:2px;background:var(--grad)}
+h2{font-size:clamp(34px,5vw,56px);font-weight:800;margin-bottom:20px;max-width:760px}
+.lead{color:var(--mute);max-width:640px;font-size:18px}
+.grad{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:15px 28px;border-radius:99px;font-weight:600;border:1px solid var(--line);transition:.3s;cursor:pointer;font-size:15px;font-family:inherit;color:var(--text);background:transparent}
+.btn:hover{transform:translateY(-3px);border-color:var(--a)}
+.btn.p{background:var(--grad);color:#07080c;border:0;box-shadow:0 10px 40px -10px var(--a)}
+.btn.p:hover{box-shadow:0 14px 50px -8px var(--b)}
+
+/* nav */
+header{position:fixed;inset:0 0 auto;z-index:50;transition:.3s}
+header.s{background:rgba(10,11,16,.8);backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
+nav{display:flex;align-items:center;justify-content:space-between;height:74px}
+.logo{font:800 22px 'Bricolage Grotesque';display:flex;align-items:center;gap:10px}
+.logo i{width:34px;height:34px;border-radius:10px;background:var(--grad);display:grid;place-items:center;color:#07080c;font:800 15px 'JetBrains Mono';font-style:normal}
+.links{display:flex;gap:34px;align-items:center}
+.links a:not(.btn){color:var(--mute);font-size:15px;font-weight:500;transition:.2s}
+.links a:not(.btn):hover{color:#fff}
+.links .btn{padding:10px 22px}
+.burger{display:none;background:none;border:0;color:#fff;width:40px;height:40px;cursor:pointer}
+.burger span{display:block;height:2px;background:#fff;margin:7px 8px;transition:.3s}
+
+/* hero */
+.hero{min-height:100vh;display:flex;align-items:center;padding:140px 0 80px;overflow:hidden}
+.glow{position:absolute;border-radius:50%;filter:blur(110px);opacity:.35;pointer-events:none}
+.g1{width:520px;height:520px;background:var(--a);top:-120px;right:-120px}
+.g2{width:420px;height:420px;background:var(--b);bottom:-160px;left:-120px;opacity:.2}
+.grid-bg{position:absolute;inset:0;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:64px 64px;opacity:.25;mask-image:radial-gradient(ellipse at 50% 40%,#000 20%,transparent 70%);-webkit-mask-image:radial-gradient(ellipse at 50% 40%,#000 20%,transparent 70%)}
+.hero .wrap{display:grid;grid-template-columns:1.25fr 1fr;gap:60px;align-items:center;position:relative}
+.badge{display:inline-flex;align-items:center;gap:10px;padding:8px 16px;border:1px solid var(--line);border-radius:99px;background:rgba(20,23,35,.7);font-size:14px;color:var(--mute);margin-bottom:28px}
+.badge b{width:8px;height:8px;border-radius:50%;background:var(--b);box-shadow:0 0 0 0 var(--b);animation:pulse 2s infinite}
+@keyframes pulse{70%{box-shadow:0 0 0 10px transparent}}
+.hero h1{font-size:clamp(44px,7vw,84px);font-weight:800;margin-bottom:26px}
+.hero p{color:var(--mute);font-size:19px;max-width:560px;margin-bottom:38px}
+.cta{display:flex;gap:14px;flex-wrap:wrap}
+.stats{display:flex;gap:44px;margin-top:56px;flex-wrap:wrap}
+.stats b{display:block;font:800 38px 'Bricolage Grotesque'}
+.stats span{color:var(--mute);font-size:14px}
+.code{background:var(--card);border:1px solid var(--line);border-radius:var(--r);box-shadow:0 40px 90px -30px rgba(124,108,255,.45);font:500 14px/1.9 'JetBrains Mono',monospace;transform:rotate(2deg);transition:.5s}
+.code:hover{transform:rotate(0)}
+.dots{display:flex;gap:8px;padding:16px 20px;border-bottom:1px solid var(--line)}
+.dots i{width:12px;height:12px;border-radius:50%;background:#ff5f57}.dots i:nth-child(2){background:#febc2e}.dots i:nth-child(3){background:#28c840}
+.code pre{padding:22px 24px;overflow:auto;white-space:pre;color:var(--mute)}
+.k{color:#c792ea}.s2{color:var(--b)}.f{color:#82aaff}.c{color:#5a6280}
+
+/* about */
+.about{background:var(--bg2)}
+.two{display:grid;grid-template-columns:1fr 1.1fr;gap:70px;align-items:start}
+.about p{color:var(--mute);margin-bottom:18px}
+.about p strong{color:var(--text);font-weight:600}
+.skills{display:flex;flex-wrap:wrap;gap:10px;margin-top:30px}
+.skills span{padding:10px 20px;border:1px solid var(--line);border-radius:99px;font:500 13px 'JetBrains Mono';background:var(--card);transition:.3s}
+.skills span:hover{border-color:var(--b);color:var(--b);transform:translateY(-3px)}
+.profile{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:34px;position:relative;overflow:hidden}
+.profile:before{content:"";position:absolute;inset:0 0 auto;height:4px;background:var(--grad)}
+.profile dl div{display:flex;justify-content:space-between;gap:20px;padding:16px 0;border-bottom:1px solid var(--line)}
+.profile dl div:last-child{border:0}
+.profile dt{color:var(--mute);font-size:14px}.profile dd{font-weight:500;text-align:right}
+
+/* cards */
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:56px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:34px;position:relative;overflow:hidden;transition:.4s}
+.card:before{content:"";position:absolute;inset:0;background:radial-gradient(400px circle at var(--x,50%) var(--y,0),rgba(124,108,255,.18),transparent 60%);opacity:0;transition:.4s}
+.card:hover{transform:translateY(-6px);border-color:#3a3f5c}
+.card:hover:before{opacity:1}
+.card>*{position:relative}
+.ico{width:52px;height:52px;border-radius:14px;background:rgba(124,108,255,.12);border:1px solid rgba(124,108,255,.35);display:grid;place-items:center;margin-bottom:24px;font:800 18px 'JetBrains Mono';color:var(--b)}
+.card h3{font-size:22px;font-weight:700;margin-bottom:12px}
+.card p{color:var(--mute);font-size:15px}
+.card.wide{grid-column:span 3;display:grid;grid-template-columns:auto 1fr;gap:26px;align-items:center}
+.card.wide .ico{margin:0}
+
+/* why */
+.why{background:var(--bg2)}
+.why .cards{grid-template-columns:repeat(2,1fr)}
+.num{font:800 56px 'Bricolage Grotesque';opacity:.9;margin-bottom:14px;display:block}
+
+/* contact */
+.box{background:var(--card);border:1px solid var(--line);border-radius:28px;padding:56px;display:grid;grid-template-columns:1fr 1fr;gap:56px;position:relative;overflow:hidden}
+.box:before{content:"";position:absolute;width:420px;height:420px;border-radius:50%;background:var(--a);filter:blur(120px);opacity:.2;top:-200px;right:-100px}
+.box>*{position:relative}
+.ci{display:flex;align-items:center;gap:18px;padding:18px 0;border-bottom:1px solid var(--line);transition:.3s}
+.ci:hover{padding-left:10px}
+.ci .ico{margin:0;flex-shrink:0;width:46px;height:46px}
+.ci small{display:block;color:var(--mute);font-size:13px}
+.ci b{font-weight:600;word-break:break-all}
+form{display:grid;gap:14px}
+input,textarea{width:100%;background:var(--bg);border:1px solid var(--line);border-radius:14px;padding:16px 18px;color:var(--text);font:inherit;outline:0;transition:.3s}
+input:focus,textarea:focus{border-color:var(--a);box-shadow:0 0 0 4px rgba(124,108,255,.15)}
+textarea{min-height:130px;resize:vertical}
+.note{font-size:13px;color:var(--mute)}
+
+footer{border-top:1px solid var(--line);padding:34px 0;color:var(--mute);font-size:14px}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+
+.rv{opacity:0;transform:translateY(34px);transition:opacity .8s,transform .8s cubic-bezier(.2,.7,.2,1)}
+.rv.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}.badge b{animation:none}}
+
+@media(max-width:960px){
+ .hero .wrap,.two,.box{grid-template-columns:1fr}
+ .cards,.why .cards{grid-template-columns:1fr 1fr}.card.wide{grid-column:span 2}
+ .code{transform:none}.box{padding:34px}
+}
+@media(max-width:700px){
+ section{padding:80px 0}
+ .burger{display:block}
+ .links{position:fixed;inset:74px 0 auto;background:var(--bg);flex-direction:column;padding:30px 24px;gap:24px;border-bottom:1px solid var(--line);transform:translateY(-130%);transition:.4s;z-index:-1}
+ .links.open{transform:none}
+ .cards,.why .cards{grid-template-columns:1fr}.card.wide{grid-column:auto;grid-template-columns:1fr}
+ .stats{gap:28px}
+}
+</style>
+</head>
+<body>
+
+<header id="hd">
+ <div class="wrap"><nav>
+  <a href="#top" class="logo"><i>KP</i>Kingsley<span class="grad">.dev</span></a>
+  <button class="burger" id="bg" aria-label="Menu"><span></span><span></span></button>
+  <div class="links" id="lk">
+   <a href="#about">About</a><a href="#services">Services</a><a href="#why">Why Me</a><a href="#contact" class="btn p">Hire Me</a>
+  </div>
+ </nav></div>
+</header>
+
+<main id="top">
+<section class="hero">
+ <div class="grid-bg"></div><div class="glow g1"></div><div class="glow g2"></div>
+ <div class="wrap">
+  <div>
+   <div class="badge"><b></b>Available for new projects &middot; Johannesburg, ZA</div>
+   <h1>Hi, I'm Kingsley. I build <span class="grad">fast, beautiful</span> web experiences.</h1>
+   <p>Front-End Web Developer specializing in modern, responsive, high-performance web applications with HTML, CSS, Tailwind, JavaScript and React.</p>
+   <div class="cta"><a href="#contact" class="btn p">Start a project &rarr;</a><a href="#services" class="btn">What I offer</a></div>
+   <div class="stats">
+    <div><b class="grad">3+</b><span>Years experience</span></div>
+    <div><b class="grad">100%</b><span>Responsive builds</span></div>
+    <div><b class="grad">24/7</b><span>Global time-zone fit</span></div>
+   </div>
+  </div>
+  <div class="code rv">
+   <div class="dots"><i></i><i></i><i></i></div>
+<pre><span class="k">const</span> <span class="f">kingsley</span> = {
+  role:   <span class="s2">"Front-End Developer"</span>,
+  stack:  [<span class="s2">"HTML"</span>, <span class="s2">"CSS"</span>, <span class="s2">"Tailwind"</span>,
+           <span class="s2">"JavaScript"</span>, <span class="s2">"React"</span>, <span class="s2">"Git"</span>],
+  focus:  <span class="s2">"speed + accessibility"</span>,
+  based:  <span class="s2">"Johannesburg, SA"</span>,
+  school: <span class="s2">"Unisa"</span>,
+  open:   <span class="k">true</span>
+};
+
+<span class="c">// clean code. pixel-perfect UI.</span></pre>
+  </div>
+ </div>
+</section>
+
+<section id="about" class="about">
+ <div class="wrap two">
+  <div class="rv">
+   <div class="eyebrow">About me</div>
+   <h2>Clean code, <span class="grad">intuitive interfaces.</span></h2>
+   <p>I'm <strong>Kingsley Phalanndwa</strong>, a Front-End Web Developer who builds modern, responsive and high-performance web applications. I write clean, scalable code and craft interfaces that bring ideas to life.</p>
+   <p>My focus is on websites that are not only visually appealing but also optimized for <strong>speed, accessibility and seamless user experience</strong>. Whether you need a responsive landing page, a dynamic React application or a pixel-perfect redesign, I deliver reliable, professional results.</p>
+   <div class="skills"><span>HTML5</span><span>CSS3</span><span>Tailwind</span><span>JavaScript</span><span>React</span><span>Git &amp; GitHub</span><span>Figma / XD / PSD</span></div>
+  </div>
+  <div class="profile rv">
+   <dl>
+    <div><dt>Role</dt><dd>Front-End Developer</dd></div>
+    <div><dt>Experience</dt><dd>3+ years</dd></div>
+    <div><dt>Location</dt><dd>Johannesburg, South Africa</dd></div>
+    <div><dt>Education</dt><dd>Unisa &ndash; University of South Africa</dd></div>
+    <div><dt>Availability</dt><dd>Flexible, incl. US hours</dd></div>
+   </dl>
+  </div>
+ </div>
+</section>
+
+<section id="services">
+ <div class="wrap">
+  <div class="eyebrow">What I offer</div>
+  <h2>Everything you need to <span class="grad">launch and grow.</span></h2>
+  <p class="lead">From first pixel to long-term maintenance, complete front-end solutions tailored to your business.</p>
+  <div class="cards">
+   <div class="card rv"><div class="ico">&lt;/&gt;</div><h3>Responsive Front-End Development</h3><p>Modern, mobile-friendly websites using HTML, CSS and Tailwind for clean design, scalability and seamless cross-device compatibility.</p></div>
+   <div class="card rv"><div class="ico">Re</div><h3>React Development</h3><p>Dynamic, interactive, component-driven applications built for high performance, reusability and maintainable code.</p></div>
+   <div class="card rv"><div class="ico">UI</div><h3>Custom UI/UX Implementation</h3><p>Figma, XD or PSD designs translated into pixel-perfect, functional websites with attention to detail and user experience.</p></div>
+   <div class="card rv"><div class="ico">Git</div><h3>Version Control &amp; Collaboration</h3><p>Structured workflows, version management and smooth collaboration with teams and clients through Git &amp; GitHub.</p></div>
+   <div class="card rv"><div class="ico">&#9889;</div><h3>Performance Optimization</h3><p>Better speed, accessibility and SEO readiness so your site ranks well and performs across all platforms.</p></div>
+   <div class="card rv"><div class="ico">{ }</div><h3>Scalable Code Architecture</h3><p>Clean, modular, future-proof code that supports long-term growth and easy integration of new features.</p></div>
+   <div class="card wide rv"><div class="ico">&#10227;</div><div><h3>Ongoing Support &amp; Maintenance</h3><p>Continuous updates, bug fixes and improvements to keep your web applications reliable and up to date.</p></div></div>
+  </div>
+ </div>
+</section>
+
+<section id="why" class="why">
+ <div class="wrap">
+  <div class="eyebrow">Why work with me</div>
+  <h2>A partner, <span class="grad">not just a freelancer.</span></h2>
+  <div class="cards">
+   <div class="card rv"><span class="num grad">01</span><h3>Comprehensive Front-End Expertise</h3><p>From responsive design to dynamic React applications, I deliver complete solutions tailored to your business needs.</p></div>
+   <div class="card rv"><span class="num grad">02</span><h3>Performance-Driven Development</h3><p>I prioritize speed, SEO and mobile responsiveness so your website looks great and performs flawlessly on every device.</p></div>
+   <div class="card rv"><span class="num grad">03</span><h3>Reliable Communication</h3><p>Based in South Africa, I adjust my availability to international time zones, including US hours, for clear and timely communication.</p></div>
+   <div class="card rv"><span class="num grad">04</span><h3>Long-Term Partnership</h3><p>Ongoing support and maintenance keep your website or application secure, up to date and performing at its best.</p></div>
+  </div>
+ </div>
+</section>
+
+<section id="contact">
+ <div class="wrap">
+  <div class="box rv">
+   <div>
+    <div class="eyebrow">Contact</div>
+    <h2 style="font-size:clamp(30px,4vw,46px)">Let's build something <span class="grad">great.</span></h2>
+    <a class="ci" href="mailto:mukundikingsley069@gmail.com"><div class="ico">@</div><div><small>Email</small><b>mukundikingsley069@gmail.com</b></div></a>
+    <a class="ci" href="tel:+27717522146"><div class="ico">&#9990;</div><div><small>Phone</small><b>071 752 2146</b></div></a>
+    <a class="ci" href="tel:+27838452376"><div class="ico">&#9990;</div><div><small>Alternative</small><b>083 845 2376</b></div></a>
+    <div class="ci" style="border:0"><div class="ico">&#9679;</div><div><small>Location</small><b>Johannesburg, South Africa</b></div></div>
+   </div>
+   <form id="f">
+    <input id="n" placeholder="Your name" required>
+    <input id="e" type="email" placeholder="Your email" required>
+    <input id="s" placeholder="Project type (e.g. landing page, React app)">
+    <textarea id="m" placeholder="Tell me about your project" required></textarea>
+    <button class="btn p" type="submit">Send message &rarr;</button>
+    <p class="note">Opens your email app with the message ready to send.</p>
+   </form>
+  </div>
+ </div>
+</section>
+</main>
+
+<footer><div class="wrap"><span>&copy; <span id="y"></span> Kingsley Phalanndwa. All rights reserved.</span><span>Front-End Developer &middot; Johannesburg</span></div></footer>
+
+<script>
+const hd=document.getElementById('hd'),lk=document.getElementById('lk');
+addEventListener('scroll',()=>hd.classList.toggle('s',scrollY>30),{passive:true});
+document.getElementById('bg').onclick=()=>lk.classList.toggle('open');
+lk.querySelectorAll('a').forEach(a=>a.onclick=()=>lk.classList.remove('open'));
+document.getElementById('y').textContent=new Date().getFullYear();
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
+document.querySelectorAll('.rv').forEach((el,i)=>{el.style.transitionDelay=(i%3)*90+'ms';io.observe(el)});
+document.querySelectorAll('.card').forEach(c=>c.addEventListener('pointermove',e=>{const r=c.getBoundingClientRect();c.style.setProperty('--x',e.clientX-r.left+'px');c.style.setProperty('--y',e.clientY-r.top+'px')}));
+document.getElementById('f').onsubmit=e=>{e.preventDefault();
+ const g=id=>document.getElementById(id).value;
+ location.href='mailto:mukundikingsley069@gmail.com?subject='+encodeURIComponent('Portfolio enquiry: '+(g('s')||'New project'))+'&body='+encodeURIComponent(g('m')+'\n\n'+g('n')+'\n'+g('e'))};
+</script>
+</body>
+</html>
